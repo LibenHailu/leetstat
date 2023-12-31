@@ -86,7 +86,17 @@ export const Popup = () => {
           <LeetCodeSubmissions leetcodeHandle={leetcodeHandle} />
           <LeetCodeTagCounts leetcodeHandle={leetcodeHandle} />
 
-          <p>Send a PR here !!!</p>
+          <p>
+            Send a PR
+            <a
+              href="https://github.com/LibenHailu/leetstat"
+              target="_blank"
+              style={{ cursor: 'pointer' }}
+            >
+              here
+            </a>
+            !!!
+          </p>
         </>
       )}
     </main>
