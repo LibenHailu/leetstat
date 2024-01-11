@@ -8,7 +8,7 @@ import LeetCodeTagCounts from '../components/leetcode-tag-counts'
 export const Popup = () => {
   const [leetcodeHandle, setLeetcodeHandle] = useState('')
 
-  const leetcodeInputRef = useRef(null)
+  const leetcodeInputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
     chrome.storage.sync.get(['leetcodeHandle'], (result) => {
@@ -21,7 +21,7 @@ export const Popup = () => {
   const handleSubmit = () => {
     chrome.storage.sync.get(['leetcodeHandle'], (result) => {
       if (!result.leetcodeHandle) {
-        const leetcodeHandle = leetcodeInputRef?.current?.value
+        const leetcodeHandle = leetcodeInputRef?.current?.value ?? ''
         chrome.storage.sync.set({ leetcodeHandle })
         setLeetcodeHandle(leetcodeHandle)
       }

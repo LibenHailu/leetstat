@@ -1,8 +1,18 @@
 import { useState, useEffect } from 'react'
 
+type Tag = {
+  tagName: string
+  tagSlug: string
+  problemsSolved: number
+}
+type TagData = {
+  advanced: Tag[]
+  intermediate: Tag[]
+  fundamental: Tag[]
+}
 const useLeetCodeTagCounts = (username: string) => {
   const [loading, setLoading] = useState(false)
-  const [result, setResult] = useState()
+  const [result, setResult] = useState<TagData>()
   const [error, setError] = useState<string | null>()
 
   useEffect(() => {
