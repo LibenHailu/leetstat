@@ -20,6 +20,6 @@ Leetstat extension access third party API and report back the results. For examp
 
 ## Feedback
 
-If you have questions or concerns about this privacy policy, feel free to [send me an email](mailto:libenhailu04@gmail.com) or [file an issue](https://github.com/LibenHailu/leetstat/issues/new) to this repository.
+If you have questions or concerns about this privacy policy, feel free to [send me an email](mailto:libenhailu04@gmail.com) or [create an issue](https://github.com/LibenHailu/leetstat/issues/new) to this repository.
 
 ---
