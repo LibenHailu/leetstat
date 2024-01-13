@@ -23,22 +23,27 @@ export const Popup = () => {
       if (!result.leetcodeHandle) {
         const leetcodeHandle = leetcodeInputRef?.current?.value ?? ''
         chrome.storage.sync.set({ leetcodeHandle })
-        setLeetcodeHandle(leetcodeHandle)
+        setLeetcodeHandle(leetcodeHandle as string)
       }
     })
   }
-
-  // chrome.storage.sync.clear()
+  function handleLogOut() {
+    chrome.storage.sync.clear()
+    setLeetcodeHandle("")
+  }
   return (
     <main>
       {!leetcodeHandle ? (
         <div className="input-container">
           <h2>Enter your LeetCode handle</h2>
-          <input type="text" placeholder="Enter LeetCode handle" ref={leetcodeInputRef} />
+          <input style={{ marginBottom: "4px" }} type="text" placeholder="Enter LeetCode handle" ref={leetcodeInputRef} />
           <button onClick={handleSubmit}>Save</button>
         </div>
       ) : (
         <>
+          <div style={{ display: 'flex', justifyContent: "end" }}>
+            <button onClick={handleLogOut}>Logout</button>
+          </div>
           <h2>Welcome to LeetStat, {leetcodeHandle}!</h2>
           <LeetCodeSubmissions leetcodeHandle={leetcodeHandle} />
           <LeetCodeTagCounts leetcodeHandle={leetcodeHandle} />
